@@ -7,6 +7,10 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 // variant
 import { fadeIn } from "../variants";
+// Ethereum model
+import EthereumCanvas from './canvas/Ethereum'
+
+
 
 const About = () => {
   const [ref, InView] = useInView({
@@ -23,8 +27,10 @@ const About = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 bg-about bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top"
-          ></motion.div>
+            className="flex-1  h-[540px]"
+          >
+            <EthereumCanvas />
+          </motion.div>
           {/* text */}
           <motion.div
             variants={fadeIn("left", 0.5)}
@@ -75,8 +81,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex gap-x-8 items-center">
-              <button className="btn btn-lg" data-text="Contact me">
-              </button>
+              <button className="btn btn-lg" data-text="Contact me"></button>
               <a href="#" className="text-gradient btn-link">
                 My Portfolio
               </a>
