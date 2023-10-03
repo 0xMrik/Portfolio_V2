@@ -3,64 +3,60 @@ import React from "react";
 import { motion } from "framer-motion";
 //variants
 import { fadeIn } from "../variants";
-// Vertical Timeline
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-
-import "react-vertical-timeline-component/style.min.css";
+// Cards
+import Tilt from "react-parallax-tilt";
 
 //experiences data
 import { experiences } from "../constants";
 
-const ExperienceCard = ({ experience }) => (
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work extra-class "
-    contentStyle={{
-      background: "#6c5ecf",
-      color: "#fff",
-      width: "80%",
-      borderRadius: "10px",
-    }}
-    contentArrowStyle={{
-      borderRight: `7px solid linear-gradient(92.23deg, #406aff 21.43%, #3bace2 50.63%, #b936ee 100%, #ff56f6 117.04%)`, // Gradient border
-      marginTop: "-10px",
-    }}
-    iconStyle={{
-      background:
-        "linear-gradient(92.23deg, #406aff 21.43%, #3bace2 50.63%, #b936ee 100%, #ff56f6 117.04%)",
-      color: "#fff",
-    }}
-    date={experience.date}
-    position="right"
-  >
-    <h3
-      style={{
-        fontSize: "1.5rem",
-        fontWeight: "bold",
-        marginBottom: "0.5rem",
-        color: "#fff", // Utilisation de texte blanc pour mettre en évidence
-      }}
+const ServiceCard = ({ experience }) => {
+  return (
+    <Tilt
+      className="xs:w-[250px] w-full mb-10"
+      glareEnable={true}
+      glareMaxOpacity={0.2}
+      scale={1.1}
+      glarePosition="all"
     >
-      {experience.title}
-    </h3>
-    <h4
-      style={{
-        fontSize: "1.25rem",
-        marginBottom: "1rem",
-        color: "#e0d6f7", // Couleur légèrement plus claire proche du fond violet
-      }}
-    >
-      {experience.company_name}
-    </h4>
-    <ul>
-      {experience.points.map((point, index) => (
-        <li key={index}>{point}</li>
-      ))}
-    </ul>
-  </VerticalTimelineElement>
-);
+      <div
+        className="p-1 rounded-2xl shadow-lg"
+        style={{
+          background: "rgba(255, 255, 255, 0.10)",
+          borderRadius: "16px",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(7.2px)",
+          WebkitBackdropFilter: "blur(7.2px)",
+          border: "2px solid rgba(255, 255, 255, 0.3)",
+          borderImageSource:
+            "linear-gradient(92.23deg, #406aff 21.43%, #3bace2 50.63%, #b936ee 100%, #ff56f6 117.04%)",
+          borderImageSlice: 1,
+        }}
+      >
+        <div className="card-content p-4">
+          <div className="bg-white p-1 rounded-full mb-4 inline-block">
+            <img
+              alt={experience.title}
+              src={experience.icon}
+              className="w-16 h-16 object-contain"
+            />
+          </div>
+          <h3 className="text-white text-[20px] font-bold text-center">
+            {experience.title}
+          </h3>
+          <p className="text-gray-300 text-center mb-2">
+            {experience.company_name}
+          </p>
+          <p className="text-gray-300 text-center mb-4">{experience.date}</p>
+          <ul className="text-gray-300 text-sm space-y-1">
+            {experience.points.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Tilt>
+  );
+};
 
 const Background = () => {
   return (
@@ -86,17 +82,16 @@ const Background = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 w-full h-full"
           >
-            {/* Timeline */}
-            {/* className="w-full h-full" */}
-            <div>
-              <VerticalTimeline
-                layout="1-column-left"
-                lineColor="linear-gradient(92.23deg, #406aff 21.43%, #3bace2 50.63%, #b936ee 100%, #ff56f6 117.04%)"
-              >
-                {experiences.map((experience, index) => (
-                  <ExperienceCard key={index} experience={experience} />
-                ))}
-              </VerticalTimeline>
+            {/* Cards */}
+            <div style={{ margin: "20px" }}>
+              {experiences.map((experience, index) => (
+                <ServiceCard
+                  key={experience.title}
+                  experience={experience}
+                  index={index}
+                  {...experience}
+                />
+              ))}
             </div>
           </motion.div>
         </div>

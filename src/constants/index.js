@@ -1,91 +1,10 @@
-// import {
-//   mobile,
-//   backend,
-//   creator,
-//   web,
-//   javascript,
-//   typescript,
-//   html,
-//   css,
-//   reactjs,
-//   redux,
-//   tailwind,
-//   nodejs,
-//   mongodb,
-//   git,
-//   figma,
-//   docker,
-//   meta,
-//   starbucks,
-//   tesla,
-//   shopify,
-//   carrent,
-//   jobit,
-//   tripguide,
-//   threejs,
-// } from "../assets";
 
-// const technologies = [
-//   {
-//     name: "HTML 5",
-//     icon: html,
-//   },
-//   {
-//     name: "CSS 3",
-//     icon: css,
-//   },
-//   {
-//     name: "JavaScript",
-//     icon: javascript,
-//   },
-//   {
-//     name: "TypeScript",
-//     icon: typescript,
-//   },
-//   {
-//     name: "React JS",
-//     icon: reactjs,
-//   },
-//   {
-//     name: "Redux Toolkit",
-//     icon: redux,
-//   },
-//   {
-//     name: "Tailwind CSS",
-//     icon: tailwind,
-//   },
-//   {
-//     name: "Node JS",
-//     icon: nodejs,
-//   },
-//   {
-//     name: "MongoDB",
-//     icon: mongodb,
-//   },
-//   {
-//     name: "Three JS",
-//     icon: threejs,
-//   },
-//   {
-//     name: "git",
-//     icon: git,
-//   },
-//   {
-//     name: "figma",
-//     icon: figma,
-//   },
-//   {
-//     name: "docker",
-//     icon: docker,
-//   },
-// ];
 
 const experiences = [
   {
     title: "Developpeur web et mobile fullstack javascript",
     company_name: "O'Clock",
-    // icon: starbucks,
-    iconBg: "#383E56",
+    icon: process.env.PUBLIC_URL + "/school/Oclock.svg",
     date: "Novembre 2022 - Mai 2023",
     points: [
       "Maîtrise de HTML, CSS, JavaScript, Git, et utilisation avancée de ES2015+.",
@@ -97,8 +16,7 @@ const experiences = [
   {
     title: "Developpeur Blockchain",
     company_name: "Alyra",
-    // icon: tesla,
-    iconBg: "#E6DEDD",
+    icon: process.env.PUBLIC_URL + "/school/Alyra.svg",
     date: "Mai 2023 - Août 2023",
     points: [
       "Compréhension de la Blockchain, architecture, POS, PoW, et environnement Ethereum : Ether, gas, opcode.",
@@ -108,5 +26,7 @@ const experiences = [
     ],
   },
 ];
+
+
 
 export { experiences };
