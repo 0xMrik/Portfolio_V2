@@ -1,4 +1,5 @@
-
+// img
+import Img2 from "../assets/portfolio-img2.png";
 
 const experiences = [
   {
@@ -27,6 +28,31 @@ const experiences = [
   },
 ];
 
+const projects = [
+  {
+    name: "CarHub",
+    description:
+      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    tags: ["React", "NextJs", "tailwind", "RapidAPI"],
+    image: { Img2 },
+    source_code_link: "https://github.com/0xMrik/Rental_Car_App",
+  },
+  {
+    name: "Job IT",
+    description:
+      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    tags: ["react", "restapi", "scss"],
+    image: { Img2 },
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Trip Guide",
+    description:
+      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    tags: ["nextjs", "supabase", "css"],
+    image: { Img2 },
+    source_code_link: "https://github.com/",
+  },
+];
 
-
-export { experiences };
+export { experiences, projects };

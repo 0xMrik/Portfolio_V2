@@ -51,7 +51,7 @@ const About = () => {
               Let's work together to bring your innovative ideas to life!
             </p>
             {/* stats */}
-            <div className="flex gap-x-6 lg:gap-x-10 mb-12">
+            {/* <div className="flex gap-x-6 lg:gap-x-10 mb-12">
               <div>
                 <div className="text-[40px] font-tertiary text-gradient mb-2">
                   {InView ? <CountUp start={0} end={13} duration={3} /> : null}
@@ -79,7 +79,7 @@ const About = () => {
                   Experience
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="flex gap-x-8 items-center">
               <button className="btn btn-lg" data-text="Contact me"></button>
               <a href="#" className="text-gradient btn-link">

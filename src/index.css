@@ -57,6 +57,10 @@
   border-radius: 100%;
 }
 
+.swiper-slide-shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) ; /* Ajustez les valeurs et l'opacité ici */
+}
+
 @layer base {
   body {
     @apply font-secondary text-lg leading-8 text-white;
